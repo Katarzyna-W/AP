@@ -1,8 +1,8 @@
 h=0.1; v=1; psi=2; n = 0; X = 0; Y = 0; x0=[X Y psi v]; L=[1 3 10 30]; 
 for przypadek=1:6
    figure;
-   sgtitle(['przypadek ',num2str(przypadek)]);
-    for i = 1:4
+   sgtitle(['Przypadek ',num2str(przypadek)]);
+   for i = 1:4
         [u, t]=control(przypadek);
         length=L(i);
         for k=1:3
@@ -13,9 +13,9 @@ for przypadek=1:6
             hold on
             subplot(2,2,i);
             plot(x1(:,1), x1(:,2));
-            xlabel('wspó³rzêdna X'); ylabel('wspó³rzêdna Y');
-            title(['d³ugoœæ pojazdu ', num2str(length)]); 
-            legend('lf=L, lr=0','lf=0.5, lr=0.5','lf=0,lr=L');
+            xlabel('X'); ylabel('Y');
+            title(['D³ugoœæ pojazdu L = ', num2str(length)]); 
+            legend('lf=L, lr=0','lf=0.5, lr=0.5','lf=0,lr=L');            
         end
     end
 end

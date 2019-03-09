@@ -9,10 +9,10 @@ elseif scenario ==2
     u(:,1)=delta_f(:); t=0:0.1:80;
 elseif scenario ==3
     t=0:0.1:320; k=320/4; u = zeros(320,3);
-    delta_f1=deg2rad(10); delta_f2=0;
-    delta_f3 = deg2rad(-10); delta_f4=0;
-    u(1:k,1)=delta_f1; u(k+1:2*k,1)=delta_f2;
-    u(2*k+1:3*k,1)=delta_f3; u(3*k+1:4*k,1)=delta_f4;
+    delta_r1=deg2rad(-10); delta_r2=deg2rad(10);
+    delta_r3 = deg2rad(-10); delta_r4=deg2rad(10);
+    u(1:k,1)=delta_r1; u(k+1:2*k,1)=delta_r2;
+    u(2*k+1:3*k,1)=delta_r3; u(3*k+1:4*k,1)=delta_r4;
 elseif scenario ==4
     u = repmat([0 deg2rad(-5) 0],800,1); t=0:0.1:80;
 elseif scenario ==5
