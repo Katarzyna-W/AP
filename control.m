@@ -1,6 +1,5 @@
 function [u, t] = control(scenario)
 % wektor sterowañ u = [delta_f delta_r a]
-
 if scenario == 1
     u = repmat([deg2rad(5) 0 0],800,1); t=0:0.1:80;
 elseif scenario ==2
