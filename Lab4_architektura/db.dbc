@@ -36,18 +36,14 @@ BS_:
 BU_:
 
 
-BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
- SG_ sg1 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
 BO_ 512 msg_A: 8 Vector__XXX
  SG_ x : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
 
 BO_ 1024 msg_B: 4 Vector__XXX
- SG_ y : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ y : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
 
 
 
-CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
 BA_DEF_  "BusType" STRING ;
 BA_DEF_ BU_  "NodeLayerModules" STRING ;
 BA_DEF_ BU_  "ECU" STRING ;
@@ -62,7 +58,6 @@ BA_DEF_DEF_  "CANoeJitterMax" 0;
 BA_DEF_DEF_  "CANoeJitterMin" 0;
 BA_DEF_DEF_  "CANoeDrift" 0;
 BA_DEF_DEF_  "CANoeStartDelay" 0;
-SIG_VALTYPE_ 3221225472 sg1 : 1;
 SIG_VALTYPE_ 512 x : 1;
 SIG_VALTYPE_ 1024 y : 1;
 

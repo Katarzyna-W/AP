@@ -15,6 +15,6 @@ on start{
 }
 
 on message msg_A{
-  msg_B.y = sin(msg_A.x)*cos(msg_A.x/2);
+  msg_B.y = sin(msg_A.x)*cos(msg_A.x/20);
   output(msg_B);
 }
