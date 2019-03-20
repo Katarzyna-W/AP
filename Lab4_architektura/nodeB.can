@@ -1,0 +1,20 @@
+/*@!Encoding:1250*/
+includes
+{
+  #include "nodeA.can"
+}
+
+variables
+{
+  
+  message 0x400 msg_B;
+}
+
+on start{
+  msg_B.y = 0;
+}
+
+on message msg_A{
+  msg_B.y = sin(msg_A.x)*cos(msg_A.x/2);
+  output(msg_B);
+}
