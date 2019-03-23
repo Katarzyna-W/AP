@@ -16,13 +16,13 @@ on start{
   setTimer(timer2,100);
 }
 
-on timer timer1{
-  setTimer(timer1, 10);
-  output(msg_A);
-}
+//on timer timer1{
+  //setTimer(timer1, 10);
+  //output(msg_A);
+//}
 
 on timer timer2{
   setTimer(timer2,100);
-  msg_A.x = msg_A.x+10;
+  msg_A.x = msg_A.x+0.8;
   output(msg_A);
 }
