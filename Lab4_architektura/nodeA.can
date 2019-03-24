@@ -25,7 +25,7 @@ on timer timer1{
 
 on timer timer2{
   setTimer(timer2,100);
-  msg_A.x = msg_A.x+10;
+  msg_A.x = msg_A.x+1;
   output(msg_A);
 }
 
