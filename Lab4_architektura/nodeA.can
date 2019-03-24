@@ -7,22 +7,25 @@ includes
 variables
 {
   message 0x200 msg_A;
+  message 0x500 connection;
   msTimer timer1;
   msTimer timer2;
 }
 
 on start{
+  output(connection);
   setTimer(timer1, 10);
   setTimer(timer2,100);
 }
 
-//on timer timer1{
-  //setTimer(timer1, 10);
-  //output(msg_A);
-//}
+on timer timer1{
+  setTimer(timer1, 10);
+  output(connection);
+}
 
 on timer timer2{
   setTimer(timer2,100);
-  msg_A.x = msg_A.x+0.8;
+  msg_A.x = msg_A.x+10;
   output(msg_A);
 }
+

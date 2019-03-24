@@ -36,6 +36,8 @@ BS_:
 BU_:
 
 
+BO_ 1280 connection: 8 Vector__XXX
+
 BO_ 512 msg_A: 8 Vector__XXX
  SG_ x : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
 
