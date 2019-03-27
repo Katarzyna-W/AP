@@ -1,0 +1,16 @@
+/*@!Encoding:1250*/
+includes
+{
+}
+
+variables
+{
+  message ThrottleMsg thm;
+}
+
+on sysvar Throttle {
+  thm.ThrottleRawValue = @Throttle;
+  thm.ThrottleValue = @Throttle/2500;
+  output(thm);
+}
+

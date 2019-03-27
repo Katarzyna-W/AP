@@ -1,0 +1,26 @@
+/*@!Encoding:1250*/
+includes
+{ 
+  #include "nodeA2.can"
+}
+
+variables
+{
+ msTimer timer100;
+  message 0x200 eng;
+
+
+}
+on start{
+  setTimer(timer100, 100);
+  @Engine = 0;
+  @Throttle = 0;
+}
+
+on timer timer100{
+  eng.EngineSpeedRawValue=(1.0-0.5*0.1)*eng.EngineSpeedRawValue+0.75*0.1*thm.ThrottleValue;
+  eng.EngineSpeedValue = 1500*eng.EngineSpeedRawValue;
+  @Engine= eng.EngineSpeedValue; 
+  output(eng);
+  setTimer(timer100, 100);
+}

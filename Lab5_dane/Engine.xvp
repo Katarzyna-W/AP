@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=11.0.55.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=11.0.55.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="Engine">
+    <Object Type="Vector.CANalyzer.Panels.Design.AnalogGaugeControl, Vector.CANalyzer.Panels.AnalogGauge, Version=11.0.55.0, Culture=neutral, PublicKeyToken=null" Name="AnalogGaugeControl1" ControlName="Analog Gauge">
+      <Property Name="Name">AnalogGaugeControl1</Property>
+      <Property Name="Size">417, 222</Property>
+      <Property Name="Location">87, 22</Property>
+      <Property Name="BackgroundColor">White</Property>
+      <Property Name="CriticalProps" Member="AAEAAAD/////AQAAAAAAAAAEAQAAAC9TeXN0ZW0uUmVmbGVjdGlvbi5NZW1iZXJJbmZvU2VyaWFsaXphdGlvbkhvbGRlcgcAAAAETmFtZQxBc3NlbWJseU5hbWUJQ2xhc3NOYW1lCVNpZ25hdHVyZQpTaWduYXR1cmUyCk1lbWJlclR5cGUQR2VuZXJpY0FyZ3VtZW50cwEBAQEBAAMIDVN5c3RlbS5UeXBlW10GAgAAAAUuY3RvcgYDAAAAXFZlY3Rvci5DQU5hbHl6ZXIuUGFuZWxzLkFuYWxvZ0dhdWdlLCBWZXJzaW9uPTExLjAuNTUuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBgQAAAA2VmVjdG9yLkNBTmFseXplci5QYW5lbHMuRGVzaWduLkdhdWdlQ3JpdGljYWxQcm9wZXJ0aWVzBgUAAAAyVm9pZCAuY3RvcihEb3VibGUsIERvdWJsZSwgRG91YmxlLCBEb3VibGUsIERvdWJsZSkGBgAAAFAuY3RvcihTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlKQEAAAAKCw==">
+        <Argument>0</Argument>
+        <Argument>3000</Argument>
+        <Argument>0</Argument>
+        <Argument>2000</Argument>
+        <Argument>2500</Argument>
+      </Property>
+      <Property Name="GaugeFont">Microsoft Sans Serif, 8.25pt</Property>
+      <Property Name="LegendText">rpm</Property>
+      <Property Name="ScaleAngle">180</Property>
+      <Property Name="SymbolConfiguration">5;16;;;;Engine;2;;;-1;;;</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">580, 270</Property>
+    <Property Name="BackColor">White</Property>
+  </Object>
+</Panel>
