@@ -1,22 +1,18 @@
-%utworzenie i konfiguracja kana³u
+%Utworzenie i konfiguracja kana³u
 canch = canChannel('Vector','CANcardXL 1',2);
 configBusSpeed(canch, 500000);
-
-%filtracja wiadomoœci
+%Filtracja wiadomoœci
 filterAllowOnly(canch, [hex2dec('600'), hex2dec('63F')],'Standard');
-
-%nawi¹zanie komunikacji
+%Nawi¹zanie komunikacji
 start(canch);
-
-%pod³¹czenie bazy danych
+%Pod³¹czenie bazy danych
 db = canDatabase('Radar_2.dbc');
 canch.Database = db;
-
-%wybudzenie radaru
+%Wybudzenie radaru
 msgToSend = canMessage(db, 'CON_VEH');
 msgToSend.Signals.ST_CON_VEH = 10;
 transmit(canch, msgToSend);
-
+%Zaznaczanie wykryæ
 figure;
 pause(0.1);
 while(1)
