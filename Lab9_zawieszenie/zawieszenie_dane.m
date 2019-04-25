@@ -4,3 +4,7 @@ cc = 15000;
 cw = 200000;
 dc = 200;
 dw = 10;
+alfa=10;
+beta=10;
+k=20;
+blad = fminsearch(@optymalizacja,[k,alfa,beta]);
