@@ -7,4 +7,10 @@ dw = 10;
 alfa=10;
 beta=10;
 k=20;
-blad = fminsearch(@optymalizacja,[k,alfa,beta]);
+
+a = sim('model','SimulationMode','normal');
+b = a.get('simout');
+time = b.Time;
+value = b.Data;
+    
+blad = fminsearch(@optymalizacja,[time(1), value(1)])
