@@ -1,0 +1,125 @@
+/*@!Encoding:1250*/
+includes
+{
+  #include "TESTER.can"
+}
+
+variables
+{
+  int ENGINE_LOAD = 45;
+  int ENGINE_COOLANT_TEMPERATURE = 120;
+  double FUEL = 73;
+  int FUEL_PRESSURE = 500;
+  int INTAKE_PRESSURE = 45;
+  double RPM = 12547.25;
+  int SPEED = 212;
+  int TIMING_ADVANCE = 14;
+  int INTAKE_TEMP = 36;
+  double MAF = 365.22;
+  int THROTLE_POS = 75;
+  message REQUEST_ID RQ_ID;
+  message RESPONSE_ID RP_ID;
+  message REQUEST RQ;
+  message RESPONSE RP;
+}
+ on message REQUEST{
+  OBD::ID='7E8';
+  RP_ID.ID =OBD::ID;
+  OBD::MODE = 0x41;
+  OBD::Ch == 0xaa;
+  OBD::Dh == 0xaa;
+  if(OBD::PID == 0x04){
+    OBD::PID == 0x04;
+    OBD::LENGTH == 0x03
+    OBD::Ah == ENGINE_LOAD*2.55;
+    OBD::Bh == 0xaa;
+  }
+  if(OBD::PID == 0x05){
+    OBD::PID == 0x05;
+    OBD::LENGTH == 0x03
+    OBD::Ah == ENGINE_COOLANT_TEMPERATURE+40;
+    OBD::Bh == 0xaa;
+  }
+  if(OBD::PID == 0x06){
+    OBD::PID == 0x06;
+    OBD::LENGTH == 0x03
+    OBD::Ah == 1.28*(FUEL+100);
+    OBD::Bh == 0xaa;
+  }
+  if(OBD::PID == 0x07){
+    OBD::PID == 0x07;
+    OBD::LENGTH == 0x03
+    OBD::Ah == 1.28*(FUEL+100);
+    OBD::Bh == 0xaa;
+  }
+  if(OBD::PID == 0x08){
+    OBD::PID == 0x08;
+    OBD::LENGTH == 0x03
+    OBD::Ah == 1.28*(FUEL+100);
+    OBD::Bh == 0xaa;
+  }
+  if(OBD::PID == 0x09){
+    OBD::PID == 0x09;
+    OBD::LENGTH == 0x03
+    OBD::Ah == 1.28*(FUEL+100);
+    OBD::Bh == 0xaa;
+  }
+  if(OBD::PID == 0x0A){
+    OBD::PID == 0x0A;
+    OBD::LENGTH == 0x03
+    OBD::Ah == FUEL_PRESSURE/3;
+    OBD::Bh == 0xaa;
+  }
+  if(OBD::PID == 0x0B){
+    OBD::PID == 0x0B;
+    OBD::LENGTH == 0x03
+    OBD::Ah == INTAKE_PRESSURE;
+    OBD::Bh == 0xaa;
+  }
+  if(OBD::PID == 0x0C){
+    OBD::PID == 0x0C;
+    OBD::LENGTH == 0x03
+    OBD::Ah == ENGINE_LOAD*2.55;
+    OBD::Bh == 0xaa;
+  }
+  if(OBD::PID == 0x0D){
+    OBD::PID == 0x0D;
+    OBD::LENGTH == 0x03
+    OBD::Ah == ENGINE_LOAD*2.55;
+    OBD::Bh == 0xaa;
+  }
+  if(OBD::PID == 0x0E){
+    OBD::PID == 0x0E;
+    OBD::LENGTH == 0x03
+    OBD::Ah == ENGINE_LOAD*2.55;
+    OBD::Bh == 0xaa;
+  }
+  if(OBD::PID == 0x0F){
+    OBD::PID == 0x0F;
+    OBD::LENGTH == 0x03
+    OBD::Ah == ENGINE_LOAD*2.55;
+    OBD::Bh == 0xaa;
+  }
+  if(OBD::PID == 0x10){
+    OBD::PID == 0x10;
+    OBD::LENGTH == 0x03
+    OBD::Ah == ENGINE_LOAD*2.55;
+    OBD::Bh == 0xaa;
+  }
+  if(OBD::PID == 0x11){
+    OBD::PID == 0x11;
+    OBD::LENGTH == 0x03
+    OBD::Ah == ENGINE_LOAD*2.55;
+    OBD::Bh == 0xaa;
+  }
+  RP.LENGTH = OBD::LENGTH;
+  RP.MODE = OBD::MODE;
+  RP.PID = OBD::PID;
+  RP.Ah = OBD::Ah;
+  RP.Bh = OBD::Bh;
+  RP.Ch = OBD::Ch;
+  RP.Dh = OBD::Dh;
+  RP.Unused = OBD::Unused;
+  output(RP);
+  output(RP_ID);
+}

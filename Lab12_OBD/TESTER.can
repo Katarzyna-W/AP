@@ -1,0 +1,29 @@
+/*@!Encoding:1250*/
+includes
+{
+  
+}
+
+variables
+{
+  message REQUEST_ID RQ_ID;
+  message RESPONSE_ID RP_ID;
+  message REQUEST RQ;
+  message RESPONSE RP;
+}
+
+on sysvar OBD::BUTTON{
+  OBD::ID='7DF';
+  OBD::Unused = 0xaa;
+  RQ_ID.ID =OBD::ID;
+  RQ.LENGTH = OBD::LENGTH;
+  RQ.MODE = OBD::MODE;
+  RQ.PID = OBD::PID;
+  RQ.Ah = OBD::Ah;
+  RQ.Bh = OBD::Bh;
+  RQ.Ch = OBD::Ch;
+  RQ.Dh = OBD::Dh;
+  RQ.Unused = OBD::Unused;
+  output(RQ);
+  output(RQ_ID);
+}
